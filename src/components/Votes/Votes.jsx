@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
-import { addVoteTo, getFirst } from "./redux/actions";
+import { addVoteTo } from "../../redux/actions";
 import { connect } from "react-redux";
 import './Votes.css';
 
 const Votes = ({
   addVoteTo,
-  getFirst,
   candidates,
   votesCount,
   lastVote,
@@ -36,7 +35,7 @@ const Votes = ({
           <p>{JSON.stringify(candidates)}</p>
           <p>Votes Count: {votesCount}</p>
           <p>Last Vote: {lastVote}</p>
-          <p>First: {first}</p>
+          <p>First Place: {first}</p>
 
         </div>
       </div>

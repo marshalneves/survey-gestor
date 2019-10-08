@@ -1,10 +1,12 @@
 import React from "react";
-import Header from "./Header";
-import Votes from "./Votes";
+import Header from "./components/Header/Header";
+import Votes from "./components/Votes/Votes";
+import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <div className="container">
+      <Header />
       <Votes />
     </div>
   );
