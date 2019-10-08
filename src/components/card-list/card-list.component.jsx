@@ -20,7 +20,6 @@ const CardList = ({ addVoteTo, candidates }) => {
                             className='card-button'
                             onClick={() => {
                                 addVoteTo(candidate);
-                                alert('voto computado');
                             }}
                         >
                             Votar

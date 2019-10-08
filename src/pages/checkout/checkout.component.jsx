@@ -14,12 +14,13 @@ const CheckoutPage = () => {
     }, [])
 
     return (
-        <>
+        <div>
             <h1 className='message'>Thanks for your vote!</h1>
+            <h3>Redirecting to homepage... Wait...</h3>
             {
                 redirect && <Redirect to='/' />
             }
-        </>
+        </div>
     )
 }
 
