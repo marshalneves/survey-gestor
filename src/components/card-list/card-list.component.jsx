@@ -2,7 +2,7 @@ import React from 'react';
 import { addVoteTo } from "../../redux/actions";
 import { connect } from "react-redux";
 
-import { Route } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 import './card-list.styles.css';
@@ -17,25 +17,31 @@ const CardList = ({ addVoteTo, candidates }) => {
                         <div><img src={`https://robohash.org/${candidate.id}?set=set2&size=180x180`} /></div>
                         <div className='card-name'>{candidate.name}</div>
                         <div className='card-votes'>{candidate.votes}</div>
-                        <button
+                        <Link
+                            to="/checkout"
                             className='card-button'
                             onClick={() => {
                                 addVoteTo(candidate);
+                                alert('voto computado');
                             }}
                         >
                             Votar
-                        </button>
+                        </Link>
                     </div>
                 ))}
         </div>
     );
 }
 
+const mapStateToProps = state => ({
+    candidates: state.reducer.candidates
+});
+
 const mapDispatchToProps = dispatch => ({
     addVoteTo: candidate => dispatch(addVoteTo(candidate))
 });
 
 export default connect(
-    null,
+    mapStateToProps,
     mapDispatchToProps
 )(CardList);

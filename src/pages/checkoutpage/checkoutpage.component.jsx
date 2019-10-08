@@ -1,17 +1,16 @@
-import React from 'react';
+import React from 'react'
 import { connect } from "react-redux";
 
-import { Link } from 'react-router-dom';
+const CheckoutPage = ({ candidates }) => {
 
-const HomePage = ({ candidates }) => {
     return (
         <>
             {JSON.stringify(candidates)}
-            <h1>Welcome to Robot Voting</h1>
-            <Link to="/vote">Click to Vote!</Link>
+            <h1>Thanks for your vote!</h1>
         </>
-    );
+    )
 }
+
 
 const mapStateToProps = state => ({
     candidates: state.reducer.candidates,
@@ -20,4 +19,4 @@ const mapStateToProps = state => ({
 export default connect(
     mapStateToProps,
     null
-)(HomePage);
+)(CheckoutPage);

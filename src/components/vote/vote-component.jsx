@@ -13,7 +13,7 @@ const Votes = ({
 
   return (
     <div className='vote-container'>
-      <CardList candidates={candidates} />
+      <CardList />
       {/* <div className='summary'>
         <h2>Summary</h2>
         <p>Votes Count: {votesCount}</p>
