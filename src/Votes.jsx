@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import { addVoteTo, getFirst } from "./redux/actions";
 import { connect } from "react-redux";
+import './Votes.css';
 
 const Votes = ({
   addVoteTo,
@@ -14,24 +15,31 @@ const Votes = ({
 
   return (
     <>
-      <p>{JSON.stringify(candidates)}</p>
-      <p>Votes Count: {votesCount}</p>
-      <p>Last Vote: {lastVote}</p>
-      <p>First: {first}</p>
-      <ul>
+      <div className='grid grid-template-columns-3'>
         {candidates.map(candidate => (
-          <li key={candidate.id}>
-            {candidate.name} - Votes: {candidate.votes}
+          <div className='card' key={candidate.id}>
+            <div><img src={`https://robohash.org/${candidate.id}?set=set2&size=180x180`} /></div>
+            <div className='card-name'>{candidate.name}</div>
+            <div className='card-votes'>{candidate.votes}</div>
             <button
+              className='button'
               onClick={() => {
                 addVoteTo(candidate);
               }}
             >
               Votar
             </button>
-          </li>
+          </div>
         ))}
-      </ul>
+        <div className='summary'>
+          <h2>Summary</h2>
+          <p>{JSON.stringify(candidates)}</p>
+          <p>Votes Count: {votesCount}</p>
+          <p>Last Vote: {lastVote}</p>
+          <p>First: {first}</p>
+
+        </div>
+      </div>
     </>
   );
 };
