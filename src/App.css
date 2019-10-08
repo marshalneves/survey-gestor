@@ -1,6 +1,10 @@
-.container {
-    width: 85vw;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr;
-}
+.App {
+    text-align: center;
+  }
+  
+  h1 {
+    font-family: 'Bigelow Rules';
+    font-size: 72px;
+    color: #0ccac4;
+  }
+  

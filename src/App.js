@@ -1,13 +1,16 @@
 import React from "react";
-import Header from "./components/Header/Header";
-import Votes from "./components/Votes/Votes";
+
 import './App.css';
+
+import { Switch, Route } from 'react-router-dom';
+import HomePage from "./pages/homepage/homepage.component";
+import VotePage from "./pages/votepage/votepage.component";
 
 function App() {
   return (
-    <div className="container">
-      <Header />
-      <Votes />
+    <div className="App">
+      <Route exact path='/' component={HomePage} />
+      <Route path='/vote' component={VotePage} />
     </div>
   );
 }
