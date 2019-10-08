@@ -1,9 +1,7 @@
 import React from 'react';
 import { addVoteTo } from "../../redux/actions";
 import { connect } from "react-redux";
-
-import { Link } from 'react-router-dom'
-
+import { Link } from 'react-router-dom';
 
 import './card-list.styles.css';
 
@@ -28,10 +26,11 @@ const CardList = ({ addVoteTo, candidates }) => {
                             Votar
                         </Link>
                     </div>
-                ))}
+                ))
+            }
         </div>
     );
-}
+};
 
 const mapStateToProps = state => ({
     candidates: state.reducer.candidates

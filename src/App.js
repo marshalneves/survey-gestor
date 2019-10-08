@@ -4,8 +4,9 @@ import './App.css';
 
 import { Switch, Route } from 'react-router-dom';
 import HomePage from "./pages/homepage/homepage.component";
-import VotePage from "./pages/votepage/votepage.component";
-import CheckoutPage from "./pages/checkoutpage/checkoutpage.component";
+import VotePage from "./pages/vote/vote.component";
+import CheckoutPage from "./pages/checkout/checkout.component";
+import SummaryPage from './pages/summary/summary.component';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route exact path='/' component={HomePage} />
         <Route path='/vote' component={VotePage} />
         <Route path='/checkout' component={CheckoutPage} />
+        <Route path='/summary' component={SummaryPage} />
       </Switch>
     </div>
   );

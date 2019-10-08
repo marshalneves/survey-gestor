@@ -1,23 +1,25 @@
 import React from 'react';
-import { connect } from "react-redux";
-
 import { Link } from 'react-router-dom';
 
-const HomePage = ({ candidates }) => {
+import SummaryPage from '../summary/summary.component';
+
+import './homepage.styles.css';
+
+const HomePage = () => {
     return (
         <>
-            {JSON.stringify(candidates)}
             <h1>Welcome to Robot Voting</h1>
-            <Link to="/vote">Click to Vote!</Link>
+            <div className='homepage-container'>
+                <div>
+                    <SummaryPage />
+                </div>
+                <div>
+                    <Link to="/vote" className='button'>Click to Vote!</Link>
+                </div>
+
+            </div>
         </>
     );
 }
 
-const mapStateToProps = state => ({
-    candidates: state.reducer.candidates,
-});
-
-export default connect(
-    mapStateToProps,
-    null
-)(HomePage);
+export default HomePage;

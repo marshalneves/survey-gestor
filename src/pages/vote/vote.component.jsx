@@ -5,7 +5,6 @@ import { connect } from "react-redux";
 const VotePage = ({ candidates }) => {
     return (
         <>
-            {JSON.stringify(candidates)}
             <h1>Make your vote!</h1>
             <Vote />
         </>
