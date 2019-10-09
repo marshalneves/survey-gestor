@@ -8,7 +8,7 @@ const INITIAL_STATE = {
   first: null
 };
 
-const addVote = (candidates, candidateVoted) => {
+const addVoteTo = (candidates, candidateVoted) => {
   return candidates.map(candidate => {
     return candidate === candidateVoted
       ? { ...candidate, votes: candidate.votes + 1 }
@@ -20,7 +20,7 @@ const getFirstCandidate = candidates => {
   const temp = [...candidates];
 
   let votesArray = temp.map(a => a.votes);
-  var maxVotes = votesArray.reduce(function(a, b) {
+  var maxVotes = votesArray.reduce(function (a, b) {
     return Math.max(a, b);
   });
   const f = temp.filter(a => a.votes === maxVotes);
@@ -30,7 +30,7 @@ const getFirstCandidate = candidates => {
 const reducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case types.ADD_VOTE:
-      const candidates = addVote(state.candidates, action.payload);
+      const candidates = addVoteTo(state.candidates, action.payload);
       const first = getFirstCandidate(candidates);
       return {
         ...state,

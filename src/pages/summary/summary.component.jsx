@@ -24,7 +24,7 @@ const SummaryPage = ({ votesCount, candidates }) => {
                 <h3>Ranking</h3>
                 {
                     candidates.sort(compare).map((c, i) => {
-                        return (<p>{++i}º {c.name}: {c.votes} vote(s)</p>)
+                        return (<p key={c.id}>{++i}º {c.name}: {c.votes} vote(s)</p>)
                     })
                 }
                 <p><b>Votes Count:</b> {votesCount}</p>

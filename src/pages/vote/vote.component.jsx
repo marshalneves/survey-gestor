@@ -6,7 +6,7 @@ const VotePage = ({ candidates }) => {
     return (
         <>
             <h1>Make your vote!</h1>
-            <CardList />
+            <CardList candidates={candidates} />
         </>
     );
 }
