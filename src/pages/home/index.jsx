@@ -8,11 +8,11 @@ import './styles.css';
 const Home = () => {
     return (
         <>
-            <div className='homepage-container'>
-                <div>
+            <div className='home-container'>
+                <div className='summary'>
                     <Summary />
                 </div>
-                <div>
+                <div className='box-button'>
                     <Link to="/vote" className='button'>Click to Vote!</Link>
                 </div>
 

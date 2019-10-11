@@ -1,4 +1,4 @@
-.homepage-container {
+.home-container {
     display: flex;
     flex-direction: row;
     flex: 2;
@@ -6,13 +6,19 @@
     align-items: center;
 }
 .button {
-    background-color: #008cba; /* Green */
-    border: none;
-    color: white;
+    border: 2px solid #da552f;
+    border-radius: 5px;
+    color: #da552f;
+    font-weight: bold;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
     cursor: pointer;
+  }
+
+  .button:hover {
+      background: #da552f;
+      color: #ffffff
   }
