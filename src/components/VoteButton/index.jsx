@@ -3,18 +3,19 @@ import { connect } from "react-redux";
 import { addVoteTo } from "../../redux/actions"
 import { Link } from 'react-router-dom';
 
-const VoteButton = ({ candidate }) => {
+const VoteButton = ({ candidate, addVoteTo }) => {
+
     return (
-        <>
+        <div>
             <Link
                 to="/checkout"
                 className='card-button'
                 onClick={() => {
                     addVoteTo(candidate);
                 }}
-            >{candidate.name}
+            >Vote
             </Link >
-        </>
+        </div>
     );
 };
 

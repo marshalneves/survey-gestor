@@ -1,17 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import SummaryPage from '../summary/summary.component';
+import Summary from '../summary'
 
-import './homepage.styles.css';
+import './styles.css';
 
-const HomePage = () => {
+const Home = () => {
     return (
         <>
-            <h1>Welcome to Robot Voting</h1>
             <div className='homepage-container'>
                 <div>
-                    <SummaryPage />
+                    <Summary />
                 </div>
                 <div>
                     <Link to="/vote" className='button'>Click to Vote!</Link>
@@ -22,4 +21,4 @@ const HomePage = () => {
     );
 }
 
-export default HomePage;
+export default Home;

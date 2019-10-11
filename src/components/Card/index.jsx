@@ -1,6 +1,6 @@
 import React from 'react';
 
-import VoteButton from '../vote-button/vote-button.component';
+import VoteButton from '../VoteButton';
 
 const Card = ({ candidate }) => {
     return (

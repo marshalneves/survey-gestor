@@ -3,19 +3,21 @@ import React from "react";
 import './App.css';
 
 import { Switch, Route } from 'react-router-dom';
-import HomePage from "./pages/homepage/homepage.component";
-import VotePage from "./pages/vote/vote.component";
-import CheckoutPage from "./pages/checkout/checkout.component";
-import SummaryPage from './pages/summary/summary.component';
+import Home from "./pages/home";
+import Vote from "./pages/vote";
+import Checkout from "./pages/checkout";
+import Summary from './pages/summary';
+import Header from "./components/Header";
 
 function App() {
   return (
     <div className="App">
+      <Header />
       <Switch>
-        <Route exact path='/' component={HomePage} />
-        <Route path='/vote' component={VotePage} />
-        <Route path='/checkout' component={CheckoutPage} />
-        <Route path='/summary' component={SummaryPage} />
+        <Route exact path='/' component={Home} />
+        <Route path='/vote' component={Vote} />
+        <Route path='/checkout' component={Checkout} />
+        <Route path='/summary' component={Summary} />
       </Switch>
     </div>
   );

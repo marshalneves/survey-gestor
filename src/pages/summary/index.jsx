@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux";
 
-import './summary.styles.css';
+import './styles.css';
 
 function compare(a, b) {
     const objA = a.votes;
@@ -16,10 +16,9 @@ function compare(a, b) {
     return comparison;
 }
 
-const SummaryPage = ({ votesCount, candidates }) => {
+const Summary = ({ votesCount, candidates }) => {
     return (
         <div>
-            {/* <h1>Summary Page</h1> */}
             <div className='container-summary'>
                 <h3>Ranking</h3>
                 {
@@ -38,4 +37,4 @@ const mapStateToProps = state => ({
     votesCount: state.reducer.votesCount
 });
 
-export default connect(mapStateToProps)(SummaryPage);
+export default connect(mapStateToProps)(Summary);

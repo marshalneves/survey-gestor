@@ -1,8 +1,8 @@
 import React from 'react';
-import CardList from "../../components/card-list/card-list.component";
+import CardList from "../../components/CardList";
 import { connect } from "react-redux";
 
-const VotePage = ({ candidates }) => {
+const Vote = ({ candidates }) => {
     return (
         <>
             <h1>Make your vote!</h1>
@@ -18,4 +18,4 @@ const mapStateToProps = state => ({
 export default connect(
     mapStateToProps,
     null
-)(VotePage);
+)(Vote);

@@ -1,11 +1,9 @@
 import React from 'react';
 
-import './header.styles.css';
-
 const Header = () => {
 
     return (
-        <h1> Voting Manager </h1>
+        <h1>Robot Voting</h1>
     );
 
 };

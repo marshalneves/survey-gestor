@@ -2,9 +2,9 @@ import React from 'react'
 import { Redirect } from 'react-router-dom';
 import { useState, useEffect } from 'react'
 
-import './checkout.styles.css';
+import './styles.css';
 
-const CheckoutPage = () => {
+const Checkout = () => {
     const [redirect, setRedirect] = useState(false);
 
     useEffect(() => {
@@ -14,9 +14,9 @@ const CheckoutPage = () => {
     }, [])
 
     return (
-        <div>
-            <h1 className='message'>Thanks for your vote!</h1>
-            <h3>Redirecting to homepage... Wait...</h3>
+        <div className='message'>
+            <h2>Thanks for your vote! Wait few seconds...</h2>
+            <h3></h3>
             {
                 redirect && <Redirect to='/' />
             }
@@ -24,4 +24,4 @@ const CheckoutPage = () => {
     )
 }
 
-export default CheckoutPage;
+export default Checkout;
