@@ -1,19 +1,16 @@
-import React from 'react';
+import React from "react";
 
-import Card from '../Card';
-import './styles.css';
+import Card from "../Card";
+import * as S from "./styles";
 
 const CardList = ({ candidates }) => {
-
-    return (
-        <div className='container'>
-            {
-                candidates.map(candidate => (
-                    <Card key={candidate.id} candidate={candidate} />
-                ))
-            }
-        </div>
-    );
+  return (
+    <S.Container>
+      {candidates.map(candidate => (
+        <Card key={candidate.id} candidate={candidate} />
+      ))}
+    </S.Container>
+  );
 };
 
 export default CardList;

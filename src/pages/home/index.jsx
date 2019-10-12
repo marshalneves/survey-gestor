@@ -1,24 +1,21 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
-import Summary from '../summary'
+import PageHeader from "../../components/PageHeader";
+import Summary from "../summary";
 
-import './styles.css';
+import * as S from "./styles";
 
 const Home = () => {
-    return (
-        <>
-            <div className='home-container'>
-                <div className='summary'>
-                    <Summary />
-                </div>
-                <div className='box-button'>
-                    <Link to="/vote" className='button'>Click to Vote!</Link>
-                </div>
-
-            </div>
-        </>
-    );
-}
+  return (
+    <>
+      <PageHeader title="Ranking" />
+      <S.Container>
+        <Summary />
+        <Link to="/vote">Click to Vote</Link>
+      </S.Container>
+    </>
+  );
+};
 
 export default Home;

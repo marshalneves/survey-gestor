@@ -1,16 +1,9 @@
-.container {
-  width: 85vw;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 2fr 2fr 2fr;
-  grid-gap: 20px;
-  text-align: center;
-}
+import styled from "styled-components";
+import { DefaultButtonStyle } from "../../styles/sharedcss";
 
-.card {
+export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: tomato;
   border: 1px solid grey;
   border-radius: 5px;
   padding: 25px;
@@ -19,9 +12,11 @@
   backface-visibility: hidden;
   transform: translateZ(0);
   transition: transform 0.25s ease-out;
-}
 
-.card-header {
+  ${DefaultButtonStyle}
+`;
+
+export const CardHeader = styled.div`
   display: flex;
   flex-direction: column;
   background-color: green;
@@ -29,18 +24,18 @@
   border-radius: 5px;
   padding: 25px;
   text-align: center;
-}
+`;
 
-.card-name {
+export const CardName = styled.div`
   font-size: 1.5em;
   font-weight: bold;
-}
+`;
 
-.card-votes {
+export const CardVotes = styled.div`
   font-size: 4em;
-}
+`;
 
-.card-button {
+export const CardButton = styled.div`
   background-color: #008cba; /* Green */
   border-radius: 5px;
   color: white;
@@ -50,4 +45,4 @@
   display: inline-block;
   font-size: 16px;
   cursor: pointer;
-}
+`;
