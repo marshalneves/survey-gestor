@@ -8,12 +8,30 @@ export const Container = styled.div`
   border-radius: 5px;
   padding: 25px;
   text-align: center;
-  -moz-osx-font-smoothing: grayscale;
   backface-visibility: hidden;
   transform: translateZ(0);
-  transition: transform 0.25s ease-out;
+  transition: all 0.2s ease-in-out;
+
+  :hover {
+    transform: scale(1.1);
+  }
 
   ${DefaultButtonStyle}
+
+  a {
+    border: 2px solid #da552f;
+    border-radius: 5px;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    color: #da552f;
+
+    :hover {
+      background: #da552f;
+      color: #fff;
+    }
+  }
 `;
 
 export const CardHeader = styled.div`

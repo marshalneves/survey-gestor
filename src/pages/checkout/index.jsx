@@ -1,22 +1,37 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
+import { addVoteTo } from "../../redux/actions";
 import { Redirect } from "react-router-dom";
-import { useState, useEffect } from "react";
-
 import * as S from "./styles";
+import MessageSpinner from "../../components/MessageSpinner";
 
-const Checkout = () => {
-  const [redirect, setRedirect] = useState(false);
+const Checkout = ({ addVoteTo, match }) => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  const candidateId = parseInt(match.params.id);
 
   useEffect(() => {
-    setTimeout(() => setRedirect(true), 2000);
-  }, []);
+    addVoteTo(candidateId);
+    setTimeout(() => setIsLoading(false), 2000);
+  }, [candidateId, addVoteTo]);
 
   return (
     <S.Container>
-      <h2>Thanks for your vote! Wait few seconds...</h2>
-      {redirect && <Redirect to="/" />}
+      <MessageSpinner>
+        We are computing your vote! Wait few seconds...
+      </MessageSpinner>
+      {!isLoading && <Redirect to="/" />}
     </S.Container>
   );
 };
 
-export default Checkout;
+const mapDispatchToProps = dispatch => ({
+  addVoteTo: candidateId => {
+    dispatch(addVoteTo(candidateId));
+  }
+});
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(Checkout);

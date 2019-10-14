@@ -1,17 +1,18 @@
 import styled from "styled-components";
 import { DefaultButtonStyle } from "../../styles/sharedcss";
-// const OptionContainerStyles = css`
-
-// `
 
 export const Container = styled.div`
   display: flex;
-  flex-direction: row;
-  flex: 2;
+  flex-direction: column;
+  flex: 1;
   justify-content: center;
   align-items: center;
 
   ${DefaultButtonStyle}
+
+  a {
+    margin-top: 20px;
+  }
 `;
 
 // export const LinkButton = styled.div`

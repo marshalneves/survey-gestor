@@ -1,20 +1,19 @@
 import React from "react";
 
-import VoteButton from "../VoteButton";
-
+import { Link } from "react-router-dom";
 import * as S from "./styles";
 
 const Card = ({ candidate }) => {
   return (
     <S.Container key={candidate.id}>
       <div>
-        <img
-          src={`https://robohash.org/${candidate.id}?set=set2&size=180x180`}
-        />
+        <img src={candidate.photo} alt={candidate.name} />
       </div>
       <S.CardName>{candidate.name}</S.CardName>
       <S.CardVotes>{candidate.votes}</S.CardVotes>
-      <VoteButton candidate={candidate} />
+      <Link to={`/checkout/${candidate.id}`} className="card-button">
+        Vote
+      </Link>
     </S.Container>
   );
 };

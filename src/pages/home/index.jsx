@@ -8,13 +8,13 @@ import * as S from "./styles";
 
 const Home = () => {
   return (
-    <>
+    <div>
       <PageHeader title="Ranking" />
       <S.Container>
         <Summary />
         <Link to="/vote">Click to Vote</Link>
       </S.Container>
-    </>
+    </div>
   );
 };
 

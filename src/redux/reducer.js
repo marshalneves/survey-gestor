@@ -8,9 +8,9 @@ const INITIAL_STATE = {
   first: null
 };
 
-const addVoteTo = (candidates, candidateVoted) => {
+const addVoteTo = (candidates, candidateId) => {
   return candidates.map(candidate => {
-    return candidate === candidateVoted
+    return candidate.id === candidateId
       ? { ...candidate, votes: candidate.votes + 1 }
       : candidate;
   });
@@ -20,7 +20,7 @@ const getFirstCandidate = candidates => {
   const temp = [...candidates];
 
   let votesArray = temp.map(a => a.votes);
-  var maxVotes = votesArray.reduce(function (a, b) {
+  var maxVotes = votesArray.reduce(function(a, b) {
     return Math.max(a, b);
   });
   const f = temp.filter(a => a.votes === maxVotes);

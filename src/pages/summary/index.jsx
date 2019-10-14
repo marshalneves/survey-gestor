@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 
 import * as S from "./styles";
 
-function compare(a, b) {
+const compare = (a, b) => {
   const objA = a.votes;
   const objB = b.votes;
 
@@ -14,27 +14,28 @@ function compare(a, b) {
     comparison = 1;
   }
   return comparison;
-}
+};
 
-const Summary = ({ votesCount, candidates }) => {
+const Summary = ({ votesCount, monsters }) => {
   return (
     <S.Container>
-      {candidates.sort(compare).map((c, i) => {
-        return (
-          <p key={c.id}>
-            {++i}º {c.name}: {c.votes} vote(s)
-          </p>
-        );
-      })}
-      <p>
-        <b>Votes Count:</b> {votesCount}
-      </p>
+      {monsters.sort(compare).map((monster, i) => (
+        <S.Card>
+          {++i}º
+          <img src={monster.photo} alt={monster.name} />
+          <div key={monster.id}>
+            <p>{monster.name}</p>
+            <p>{monster.votes} vote(s)</p>
+          </div>
+        </S.Card>
+      ))}
+      {/* <b>Votes Count:</b> {votesCount} */}
     </S.Container>
   );
 };
 
 const mapStateToProps = state => ({
-  candidates: state.reducer.candidates,
+  monsters: state.reducer.candidates,
   votesCount: state.reducer.votesCount
 });
 

@@ -8,6 +8,8 @@ import Summary from "./pages/summary";
 import Header from "./components/Header";
 import GlobalStyle from "./styles/global";
 
+import WithSpinner from "./components/WithSpinner";
+
 function App() {
   return (
     <div className="App">
@@ -16,7 +18,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/vote" component={Vote} />
-        <Route path="/checkout" component={Checkout} />
+        <Route path="/checkout/:id" component={Checkout} />
         <Route path="/summary" component={Summary} />
       </Switch>
     </div>
