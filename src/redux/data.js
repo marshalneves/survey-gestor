@@ -53,19 +53,19 @@ const APP_DATA = [
     candidates: [
       {
         id: 1,
-        name: "Cat 1",
+        name: "Robot 1",
         votes: 0,
         photo: "https://robohash.org/baroog?set=set1"
       },
       {
         id: 2,
-        name: "Cat 2",
+        name: "Robot 2",
         votes: 0,
         photo: "https://robohash.org/vantuum?set=set1"
       },
       {
         id: 3,
-        name: "Cat 3",
+        name: "Robot 3",
         votes: 0,
         photo: "https://robohash.org/berzoog?set=set1"
       }
