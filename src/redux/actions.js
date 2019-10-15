@@ -1,10 +1,10 @@
 import typesReducer from "./types";
 
-export const addVoteTo = candidateId => ({
+export const addVoteTo = (electionId, candidateId) => ({
   type: typesReducer.ADD_VOTE,
-  payload: candidateId
+  payload: { electionId, candidateId }
 });
 
-export const getFirst = () => ({
-  type: typesReducer.GET_FIRST
+export const getCandidates = () => ({
+  type: typesReducer.GET_CANDIDATES
 });

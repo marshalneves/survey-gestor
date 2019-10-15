@@ -1,21 +1,28 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
+import { connect } from 'react-redux';
 import PageHeader from "../../components/PageHeader";
 import Summary from "../summary";
 
 import * as S from "./styles";
 
-const Home = () => {
+const Home = ({ elections }) => {
   return (
     <div>
-      <PageHeader title="Ranking" />
+      <PageHeader title="Elections" />
       <S.Container>
-        <Summary />
-        <Link to="/vote">Click to Vote</Link>
+        {
+          elections.map(election => (
+            <>
+              <Summary key={election.id} election={election} />
+            </>
+          ))};
       </S.Container>
     </div>
   );
 };
 
-export default Home;
+const mapStateToProps = state => ({
+  elections: state.reducer.elections,
+});
+
+export default connect(mapStateToProps)(Home);

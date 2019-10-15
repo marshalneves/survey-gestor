@@ -12,6 +12,8 @@ export const Container = styled.div`
   transform: translateZ(0);
   transition: all 0.2s ease-in-out;
 
+  margin:30px;
+
   :hover {
     transform: scale(1.1);
   }

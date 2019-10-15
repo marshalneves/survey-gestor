@@ -1,49 +1,44 @@
 import types from "./types";
-import APP_DATA from "./candidates.data";
+import APP_DATA from "./data";
 
 const INITIAL_STATE = {
-  candidates: APP_DATA.candidates,
-  votesCount: 0,
-  lastVote: null,
-  first: null
+  elections: APP_DATA,
 };
 
-const addVoteTo = (candidates, candidateId) => {
-  return candidates.map(candidate => {
-    return candidate.id === candidateId
-      ? { ...candidate, votes: candidate.votes + 1 }
-      : candidate;
+const addVoteTo = (elections, payload) => {
+  return elections.map(election => {
+    if (election.id === payload.electionId) {
+      elections.candidates.map(candidate => {
+        return (candidate.id === payload.candidateId) ?
+          { ...elections, candidates: [{ ...elections.candidates }, { ...candidate, votes: candidate.votes + 1 }] }
+          :
+          { ...elections }
+      });
+    }
   });
-};
+}
 
-const getFirstCandidate = candidates => {
-  const temp = [...candidates];
+// const getFirstCandidate = candidates => {
+//   const temp = [...candidates];
 
-  let votesArray = temp.map(a => a.votes);
-  var maxVotes = votesArray.reduce(function(a, b) {
-    return Math.max(a, b);
-  });
-  const f = temp.filter(a => a.votes === maxVotes);
-  return f[0].name;
-};
+//   let votesArray = temp.map(a => a.votes);
+//   var maxVotes = votesArray.reduce(function (a, b) {
+//     return Math.max(a, b);
+//   });
+//   const f = temp.filter(a => a.votes === maxVotes);
+//   return f[0].name;
+// };
 
 const reducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case types.ADD_VOTE:
-      const candidates = addVoteTo(state.candidates, action.payload);
-      const first = getFirstCandidate(candidates);
+      const elections = addVoteTo(state.elections, action.payload);
       return {
         ...state,
-        candidates,
-        votesCount: ++state.votesCount,
-        lastVote: action.payload.name,
-        first
+        elections,
+
       };
-    case types.GET_FIRST:
-      return {
-        ...state,
-        first: "teste" //getFirstCandidate(state.candidates)
-      };
+
     default:
       return state;
   }

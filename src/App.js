@@ -17,7 +17,7 @@ function App() {
       <Header />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/vote" component={Vote} />
+        <Route path="/vote/:electionId" component={Vote} />
         <Route path="/checkout/:id" component={Checkout} />
         <Route path="/summary" component={Summary} />
       </Switch>

@@ -4,19 +4,22 @@ import { connect } from "react-redux";
 import PageHeader from "../../components/PageHeader";
 import * as S from "./styles";
 
-const Vote = ({ candidates }) => {
+const Vote = ({ elections, match }) => {
+
+  const election = elections.filter(e => e.id === parseInt(match.params.electionId));
+
   return (
     <>
-      <PageHeader title="Choose your monster!" />
+      <PageHeader title={election[0].title} />
       <S.Container>
-        <CardList candidates={candidates} />
+        <CardList candidates={election[0].candidates} />
       </S.Container>
     </>
   );
 };
 
 const mapStateToProps = state => ({
-  candidates: state.reducer.candidates
+  elections: state.reducer.elections
 });
 
 export default connect(

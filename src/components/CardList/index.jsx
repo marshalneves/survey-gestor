@@ -7,7 +7,7 @@ const CardList = ({ candidates }) => {
   return (
     <S.Container>
       {candidates.map(candidate => (
-        <Card key={candidate.id} candidate={candidate} />
+        <Card as='div' key={candidate.id} candidate={candidate} />
       ))}
     </S.Container>
   );
