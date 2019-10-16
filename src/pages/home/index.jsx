@@ -8,13 +8,13 @@ import * as S from "./styles";
 const Home = ({ elections }) => {
   return (
     <div>
-      <PageHeader title="Elections" />
+      <PageHeader title="Surveys" />
       <S.Container>
         {
           elections.map(election => (
-            <>
+            <div>
               <Summary key={election.id} election={election} />
-            </>
+            </div>
           ))};
       </S.Container>
     </div>

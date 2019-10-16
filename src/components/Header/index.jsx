@@ -5,7 +5,12 @@ import * as S from "./styles";
 const Header = () => {
   return (
     <S.Container>
-      <h1>Voting Manager</h1>
+      <div>
+        <h1>Survey Gestor</h1>
+      </div>
+      <div>
+        Made with love by Marshal
+      </div>
     </S.Container>
   );
 };

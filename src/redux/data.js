@@ -70,7 +70,32 @@ const APP_DATA = [
         photo: "https://robohash.org/berzoog?set=set1"
       }
     ]
+  },
+  {
+    id: 4,
+    title: 'Most cutty cat',
+    candidates: [
+      {
+        id: 1,
+        name: "Cat 1",
+        votes: 0,
+        photo: "https://robohash.org/sdasdasdasd?set=set4"
+      },
+      {
+        id: 2,
+        name: "Cat 2",
+        votes: 0,
+        photo: "https://robohash.org/asdasdasdas?set=set4"
+      },
+      {
+        id: 3,
+        name: "Cat 3",
+        votes: 0,
+        photo: "https://robohash.org/asdasdasd?set=set4"
+      }
+    ]
   }
+
 ];
 
 export default APP_DATA;

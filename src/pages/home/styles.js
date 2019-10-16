@@ -1,14 +1,8 @@
 import styled from "styled-components";
-import { DefaultButtonStyle } from "../../styles/sharedcss";
-
 export const Container = styled.div`
+  max-width: 1200px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-
-  ${DefaultButtonStyle}
-
-  a {
-    margin-left: 80px;
-  }
+  margin: 0 auto;
 `;
