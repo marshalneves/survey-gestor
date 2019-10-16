@@ -6,30 +6,22 @@ const INITIAL_STATE = {
 };
 
 const addVoteTo = (elections, payload) => {
-  return elections.map(election => {
-    if (election.id === payload.electionId) {
-      elections.candidates.map(candidate => {
-        return (candidate.id === payload.candidateId) ?
-          { ...elections, candidates: [{ ...elections.candidates }, { ...candidate, votes: candidate.votes + 1 }] }
-          :
-          { ...elections }
-      });
-    }
-  });
+  // schipperheyn
+
+  let ind = elections.findIndex(election => election.id === payload.electionId);
+  const election = elections[ind];
+
+  ind = election.candidates.findIndex((obj => obj.id === payload.candidateId));
+  const candidate = election.candidates[ind];
+
+  candidate.votes = candidate.votes + 1;
+
+  return elections;
+
 }
 
-// const getFirstCandidate = candidates => {
-//   const temp = [...candidates];
-
-//   let votesArray = temp.map(a => a.votes);
-//   var maxVotes = votesArray.reduce(function (a, b) {
-//     return Math.max(a, b);
-//   });
-//   const f = temp.filter(a => a.votes === maxVotes);
-//   return f[0].name;
-// };
-
 const reducer = (state = INITIAL_STATE, action) => {
+
   switch (action.type) {
     case types.ADD_VOTE:
       const elections = addVoteTo(state.elections, action.payload);

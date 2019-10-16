@@ -8,12 +8,13 @@ import MessageSpinner from "../../components/MessageSpinner";
 const Checkout = ({ addVoteTo, match }) => {
   const [isLoading, setIsLoading] = useState(true);
 
-  const candidateId = parseInt(match.params.id);
+  const electionId = parseInt(match.params.electionId);
+  const candidateId = parseInt(match.params.candidateId);
 
   useEffect(() => {
-    addVoteTo(candidateId);
+    addVoteTo(electionId, candidateId);
     setTimeout(() => setIsLoading(false), 2000);
-  }, [candidateId, addVoteTo]);
+  }, [electionId, candidateId, addVoteTo]);
 
   return (
     <S.Container>
@@ -26,8 +27,8 @@ const Checkout = ({ addVoteTo, match }) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  addVoteTo: candidateId => {
-    dispatch(addVoteTo(candidateId));
+  addVoteTo: (electionId, candidateId) => {
+    dispatch(addVoteTo(electionId, candidateId));
   }
 });
 

@@ -6,13 +6,13 @@ import * as S from "./styles";
 
 const Vote = ({ elections, match }) => {
 
-  const election = elections.filter(e => e.id === parseInt(match.params.electionId));
+  const election = elections.filter(e => e.id === parseInt(match.params.electionId))[0];
 
   return (
     <>
-      <PageHeader title={election[0].title} />
+      <PageHeader title={election.title} />
       <S.Container>
-        <CardList candidates={election[0].candidates} />
+        <CardList election={election} />
       </S.Container>
     </>
   );

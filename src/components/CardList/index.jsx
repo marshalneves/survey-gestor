@@ -3,12 +3,15 @@ import React from "react";
 import Card from "../Card";
 import * as S from "./styles";
 
-const CardList = ({ candidates }) => {
+const CardList = props => {
+  const election = props.election;
   return (
     <S.Container>
-      {candidates.map(candidate => (
-        <Card as='div' key={candidate.id} candidate={candidate} />
-      ))}
+      {
+        election.candidates.map(candidate => {
+          return (<Card as='div' key={election.id + candidate.id} election={election} candidate={candidate} />)
+        })
+      }
     </S.Container>
   );
 };
