@@ -31,13 +31,13 @@ margin: 0 auto;
 `;
 
 export const Card = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-text-align: center;
-padding: 10px;
-margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    margin: 0 auto;
 
 `;
 
@@ -47,23 +47,25 @@ export const CardItem = styled.div`
 
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
 
 `;
 
 export const CardTitle = styled.div`
 
-  text-align: center;
-  padding: 10px;
-  margin: 0 auto;
-  font-size: 1.5em;
+    text-align: center;
+    padding: 10px;
+    margin: 0 auto;
+    font-size: 1.5em;
 
 `;
 
 export const CardFooter = styled.div`
 
-  text-align: center;
-  padding: 10px;
-  margin: 0 auto;
-  font-size: 1.5em;
+    text-align: center;
+    padding: 10px;
+    margin: 0 auto;
+    font-size: 1.5em;
 
 `;

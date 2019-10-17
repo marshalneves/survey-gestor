@@ -6,13 +6,22 @@ import * as S from "./styles";
 
 const Vote = ({ elections, match }) => {
 
-  const election = elections.filter(e => e.id === parseInt(match.params.electionId))[0];
+  const electionId = parseInt(match.params.electionId);
+  const election = elections.filter(e => e.id === electionId)[0];
 
   return (
     <>
-      <PageHeader title={election.title} />
+      <p>{JSON.stringify(election)}</p>
+      {election && <PageHeader title={election.title} />}
       <S.Container>
-        <CardList election={election} />
+        {election &&
+          <>
+            <CardList election={election} />
+          </>
+        }
+        {!election &&
+          <span>{"Sorry, election not found..."}</span>
+        }
       </S.Container>
     </>
   );

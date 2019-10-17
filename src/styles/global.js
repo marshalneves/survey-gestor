@@ -9,7 +9,7 @@ export default createGlobalStyle`
         outline: 0;
         box-sizing: border-box;
     }
-    
+
     html, body, #root {
         height: 100%;
     }
@@ -24,5 +24,21 @@ export default createGlobalStyle`
         background: #ecf1f8;
         color: #333;
         -webkit-font-smothing: antialiased !important;
+
+    }
+
+    footer {
+        flex
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    footer {
+        margin-top: auto; 
+        text-align: center;
     }
 `;

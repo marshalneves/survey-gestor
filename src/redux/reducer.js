@@ -2,7 +2,7 @@ import types from "./types";
 import APP_DATA from "./data";
 
 const INITIAL_STATE = {
-  elections: APP_DATA,
+  elections: APP_DATA.elections,
 };
 
 const addVoteTo = (elections, payload) => {

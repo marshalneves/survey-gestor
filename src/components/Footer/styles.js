@@ -1,19 +1,14 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 
-  height: 80px;
+  height: 40px;
   padding: 0 30px;
   background: #7159c1;
   color: #fff;
 
-`;
-
-export const Heart = styled.div`
-  color: red;
 
 `;
