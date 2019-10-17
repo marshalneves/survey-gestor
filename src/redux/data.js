@@ -3,6 +3,7 @@ const APP_DATA = {
     {
       id: 1,
       title: 'Most ugly monster',
+      votesCount: 0,
       candidates: [
         {
           id: 1,
@@ -27,6 +28,7 @@ const APP_DATA = {
     {
       id: 2,
       title: 'Most beautiful cat',
+      votesCount: 0,
       candidates: [
         {
           id: 1,
@@ -51,6 +53,7 @@ const APP_DATA = {
     {
       id: 3,
       title: 'Most tec robot',
+      votesCount: 0,
       candidates: [
         {
           id: 1,
@@ -75,6 +78,7 @@ const APP_DATA = {
     {
       id: 4,
       title: 'Most cutty cat',
+      votesCount: 0,
       candidates: [
         {
           id: 1,

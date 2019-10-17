@@ -9,7 +9,7 @@ const Header = () => {
         <h1>Survey Gestor</h1>
       </div>
       <div>
-        <span>Made with &#10084; by Marshal</span>
+        <span>Admin</span>
       </div>
     </S.Container>
   );

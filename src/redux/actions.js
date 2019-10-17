@@ -8,3 +8,7 @@ export const addVoteTo = (electionId, candidateId) => ({
 export const getCandidates = () => ({
   type: typesReducer.GET_CANDIDATES
 });
+
+export const resetState = () => ({
+  type: typesReducer.RESET_STATE
+})

@@ -11,6 +11,8 @@ const addVoteTo = (elections, payload) => {
   let ind = elections.findIndex(election => election.id === payload.electionId);
   const election = elections[ind];
 
+  election.votesCount = election.votesCount + 1;
+
   ind = election.candidates.findIndex((obj => obj.id === payload.candidateId));
   const candidate = election.candidates[ind];
 
@@ -27,9 +29,19 @@ const reducer = (state = INITIAL_STATE, action) => {
       const elections = addVoteTo(state.elections, action.payload);
       return {
         ...state,
-        elections,
+        elections
 
       };
+    case types.RESET_STATE:
+      state.elections.map(el => {
+        el.votesCount = 0
+        el.candidates.map(ca => {
+          ca.votes = 0
+        })
+      })
+      return {
+        ...state,
+      }
 
     default:
       return state;
