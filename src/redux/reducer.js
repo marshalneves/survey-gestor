@@ -22,14 +22,17 @@ const addVoteTo = (elections, payload) => {
 
 }
 
+function totalVotes(election) {
+  return election.candidates.reduce((total, candidate) => total + candidate.totalVotes, 0);
+}
+
 const reducer = (state = INITIAL_STATE, action) => {
 
   switch (action.type) {
     case types.ADD_VOTE:
-      const elections = addVoteTo(state.elections, action.payload);
       return {
         ...state,
-        elections
+        elections: addVoteTo(state.elections, action.payload)
 
       };
     case types.RESET_STATE:

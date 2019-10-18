@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 import PageHeader from "../../components/PageHeader";
 import * as S from "./styles";
 
+import { selectElectionCandidates } from '../../redux/selectors';
+
 const Vote = ({ elections, match }) => {
 
   const electionId = parseInt(match.params.electionId);
