@@ -61,6 +61,15 @@ export const CardTitle = styled.div`
 
 `;
 
+export const CardSubTitle = styled.div`
+
+    text-align: center;
+    padding: 10px;
+    margin: 0 auto;
+    font-size: 0.7em;
+
+`;
+
 export const CardFooter = styled.div`
 
     text-align: center;

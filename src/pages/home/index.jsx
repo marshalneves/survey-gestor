@@ -27,7 +27,7 @@ const Home = ({ elections, resetState }) => {
   );
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   elections: state.reducer.elections,
 });
 

@@ -12,7 +12,8 @@
     "redux-logger": "^3.0.6",
     "redux-persist": "^6.0.0",
     "reselect": "^4.0.0",
-    "styled-components": "^4.4.0"
+    "styled-components": "^4.4.0",
+    "yarn": "^1.19.1"
   },
   "scripts": {
     "start": "react-scripts start",

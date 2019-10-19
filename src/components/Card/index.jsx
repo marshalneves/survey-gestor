@@ -1,7 +1,8 @@
 import React from "react";
-
+import {connect} from 'react-redux';
 import { Link } from "react-router-dom";
 import * as S from "./styles";
+import { createSelector } from 'reselect';
 
 const Card = ({ election, candidate }) => {
   return (
@@ -17,5 +18,14 @@ const Card = ({ election, candidate }) => {
     </S.Container>
   );
 };
+
+// const totalVotes = createSelector(
+//   state => state.elections.candidates,
+//   (candidates) => {
+//     return (
+//       candidates.reduce((qtd, candidate) => qtd + candidate.totalVotes, 0);
+//     );
+//   };
+// );
 
 export default Card;
