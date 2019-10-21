@@ -1,6 +1,6 @@
 # Survey Gestor
 
-Foobar is a simple ReactJS App that implements some important libraries and concepts, including:
+Survey Gestor is a simple ReactJS App that implements some important libraries and concepts, including:
 - Redux
 - Styled Components
 - Reselect
